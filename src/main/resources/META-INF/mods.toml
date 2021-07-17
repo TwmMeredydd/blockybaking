@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="GNU General Public Licence v3"
+issueTrackerURL="https://github.com/B1tNet/blockybaking/issues"
+
+[[mods]]
+modId="blockybaking"
+version="${file.jarVersion}"
+displayName="BlockyBaking"
+#updateJSONURL=""
+#displayURL=""
+#logoFile=""
+#credits=""
+authors="BitNet"
+description='''
+A mod that adds baking equipment and extra food to the game
+'''
+
+[[dependencies.blockybaking]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.blockybaking]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5,1.17)"
+    ordering="NONE"
+    side="BOTH"
