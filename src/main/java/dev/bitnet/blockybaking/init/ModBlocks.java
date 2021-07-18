@@ -21,8 +21,10 @@ package dev.bitnet.blockybaking.init;
 
 import dev.bitnet.blockybaking.BlockyBaking;
 import dev.bitnet.blockybaking.block.IronBowlBlock;
+import dev.bitnet.blockybaking.block.StandMixerBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -33,6 +35,8 @@ public class ModBlocks {
     public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BlockyBaking.MODID);
 
     public static final RegistryObject<IronBowlBlock> IRON_BOWL = BLOCKS.register("iron_bowl", IronBowlBlock::new);
+    public static final RegistryObject<StandMixerBlock> RED_STAND_MIXER = BLOCKS.register("red_stand_mixer", () -> new StandMixerBlock(DyeColor.RED));
 
     public static final RegistryObject<BlockItem> IRON_BOWL_ITEM = BLOCK_ITEMS.register("iron_bowl", () -> new BlockItem(IRON_BOWL.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> RED_STAND_MIXER_ITEM = BLOCK_ITEMS.register("red_stand_mixer", () -> new BlockItem(RED_STAND_MIXER.get(), new Item.Properties()));
 }
