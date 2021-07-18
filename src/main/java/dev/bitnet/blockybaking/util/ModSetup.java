@@ -19,9 +19,19 @@
 
 package dev.bitnet.blockybaking.util;
 
+import dev.bitnet.blockybaking.init.ModBlocks;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 public class ModSetup {
+    public static final ItemGroup itemGroup = new ItemGroup("blockybaking") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModBlocks.RED_STAND_MIXER_ITEM.get());
+        }
+    };
+
     public static void init(final FMLCommonSetupEvent event) {
 
     }
