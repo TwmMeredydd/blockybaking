@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "blockybaking:block/white_stand_mixer"
+    },
+    "facing=east": {
+      "model": "blockybaking:block/white_stand_mixer",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "blockybaking:block/white_stand_mixer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "blockybaking:block/white_stand_mixer",
+      "y": 270
+    }
+  }
+}

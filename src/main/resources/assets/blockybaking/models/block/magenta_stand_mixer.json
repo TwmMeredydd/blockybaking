@@ -1,0 +1,6 @@
+{
+  "parent": "blockybaking:block/stand_mixer",
+  "textures": {
+    "1": "blockybaking:block/magenta_stand_mixer"
+  }
+}
