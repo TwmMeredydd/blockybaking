@@ -20,7 +20,6 @@
 package dev.bitnet.blockybaking.init;
 
 import dev.bitnet.blockybaking.BlockyBaking;
-import dev.bitnet.blockybaking.block.IronBowlBlock;
 import dev.bitnet.blockybaking.block.StandMixerBlock;
 import dev.bitnet.blockybaking.util.ModSetup;
 import net.minecraft.block.Block;
@@ -37,7 +36,6 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BlockyBaking.MODID);
     public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BlockyBaking.MODID);
 
-    public static final RegistryObject<IronBowlBlock> IRON_BOWL = BLOCKS.register("iron_bowl", IronBowlBlock::new);
     public static final RegistryObject<StandMixerBlock> WHITE_STAND_MIXER = BLOCKS.register("white_stand_mixer", () -> new StandMixerBlock(DyeColor.WHITE));
     public static final RegistryObject<StandMixerBlock> ORANGE_STAND_MIXER = BLOCKS.register("orange_stand_mixer", () -> new StandMixerBlock(DyeColor.ORANGE));
     public static final RegistryObject<StandMixerBlock> MAGENTA_STAND_MIXER = BLOCKS.register("magenta_stand_mixer", () -> new StandMixerBlock(DyeColor.MAGENTA));
@@ -55,7 +53,6 @@ public class ModBlocks {
     public static final RegistryObject<StandMixerBlock> RED_STAND_MIXER = BLOCKS.register("red_stand_mixer", () -> new StandMixerBlock(DyeColor.RED));
     public static final RegistryObject<StandMixerBlock> BLACK_STAND_MIXER = BLOCKS.register("black_stand_mixer", () -> new StandMixerBlock(DyeColor.BLACK));
 
-    public static final RegistryObject<BlockItem> IRON_BOWL_ITEM = BLOCK_ITEMS.register("iron_bowl", () -> new BlockItem(IRON_BOWL.get(), BASE_BLOCK_ITEM_PROPERTIES));
     public static final RegistryObject<BlockItem> WHITE_STAND_MIXER_ITEM = BLOCK_ITEMS.register("white_stand_mixer", () -> new BlockItem(WHITE_STAND_MIXER.get(), BASE_BLOCK_ITEM_PROPERTIES));
     public static final RegistryObject<BlockItem> ORANGE_STAND_MIXER_ITEM = BLOCK_ITEMS.register("orange_stand_mixer", () -> new BlockItem(ORANGE_STAND_MIXER.get(), BASE_BLOCK_ITEM_PROPERTIES));
     public static final RegistryObject<BlockItem> MAGENTA_STAND_MIXER_ITEM = BLOCK_ITEMS.register("magenta_stand_mixer", () -> new BlockItem(MAGENTA_STAND_MIXER.get(), BASE_BLOCK_ITEM_PROPERTIES));

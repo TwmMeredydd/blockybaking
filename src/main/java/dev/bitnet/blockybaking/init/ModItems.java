@@ -29,5 +29,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BlockyBaking.MODID);
 
+    public static final RegistryObject<BasicItem> IRON_BOWL = ITEMS.register("iron_bowl", BasicItem::new);
     public static final RegistryObject<BasicItem> MIXING_PADDLE = ITEMS.register("mixing_paddle", BasicItem::new);
 }

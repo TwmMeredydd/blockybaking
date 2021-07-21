@@ -1,3 +1,6 @@
 {
-  "parent": "blockybaking:block/iron_bowl"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "blockybaking:item/iron_bowl"
+  }
 }
