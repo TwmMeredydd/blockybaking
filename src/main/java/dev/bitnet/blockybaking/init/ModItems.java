@@ -31,4 +31,5 @@ public class ModItems {
 
     public static final RegistryObject<BasicItem> IRON_BOWL = ITEMS.register("iron_bowl", BasicItem::new);
     public static final RegistryObject<BasicItem> MIXING_PADDLE = ITEMS.register("mixing_paddle", BasicItem::new);
+    public static final RegistryObject<BasicItem> COMBUSTION_MOTOR = ITEMS.register("combustion_motor", BasicItem::new);
 }
