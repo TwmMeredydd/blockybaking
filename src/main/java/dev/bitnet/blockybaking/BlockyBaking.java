@@ -22,6 +22,7 @@ package dev.bitnet.blockybaking;
 import dev.bitnet.blockybaking.client.ModClientSetup;
 import dev.bitnet.blockybaking.init.ModBlocks;
 import dev.bitnet.blockybaking.init.ModItems;
+import dev.bitnet.blockybaking.init.ModTileEntityTypes;
 import dev.bitnet.blockybaking.util.ModSetup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -52,6 +53,7 @@ public class BlockyBaking {
         ModItems.ITEMS.register(bus);
         ModBlocks.BLOCKS.register(bus);
         ModBlocks.BLOCK_ITEMS.register(bus);
+        ModTileEntityTypes.TILE_ENTITY_TYPES.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
