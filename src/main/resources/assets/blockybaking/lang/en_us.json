@@ -20,5 +20,7 @@
   "block.blockybaking.brown_stand_mixer": "Brown Stand Mixer",
   "block.blockybaking.green_stand_mixer": "Green Stand Mixer",
   "block.blockybaking.red_stand_mixer": "Red Stand Mixer",
-  "block.blockybaking.black_stand_mixer": "Black Stand Mixer"
+  "block.blockybaking.black_stand_mixer": "Black Stand Mixer",
+
+  "container.blockybaking.stand_mixer": "Stand Mixer"
 }

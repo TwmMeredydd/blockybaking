@@ -17,18 +17,28 @@
  *     along with Blocky Baking.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package dev.bitnet.blockybaking.client;
+package dev.bitnet.blockybaking.inventory.container;
 
-import dev.bitnet.blockybaking.client.gui.StandMixerScreen;
-import dev.bitnet.blockybaking.init.ModContainerTypes;
-import net.minecraft.client.gui.ScreenManager;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.container.Slot;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraftforge.common.ForgeHooks;
 
-@OnlyIn(Dist.CLIENT)
-public class ModClientSetup {
-    public static void init(final FMLClientSetupEvent event) {
-        ScreenManager.register(ModContainerTypes.STAND_MIXER.get(), StandMixerScreen::new);
+public class FuelSlot extends Slot {
+    public FuelSlot(IInventory inv, int index, int x, int y) {
+        super(inv, index, x, y);
+    }
+
+    public boolean mayPlace(ItemStack stack) {
+        return ForgeHooks.getBurnTime(stack) > 0 || isBucket(stack);
+    }
+
+    public int getMaxStackSize(ItemStack stack) {
+        return isBucket(stack) ? 1 : super.getMaxStackSize(stack);
+    }
+
+    public static boolean isBucket(ItemStack p_178173_0_) {
+        return p_178173_0_.getItem() == Items.BUCKET;
     }
 }
