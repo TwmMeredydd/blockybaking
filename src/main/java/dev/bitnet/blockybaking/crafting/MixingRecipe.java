@@ -110,26 +110,26 @@ public class MixingRecipe implements IRecipe<IInventory> {
         private static final ResourceLocation NAME = new ResourceLocation(BlockyBaking.MODID, "mixing");
 
         @Override
-        public MixingRecipe fromJson(ResourceLocation id, JsonObject jsonFile) {
-            String group = JSONUtils.getAsString(jsonFile, "group", "");
-            NonNullList<Ingredient> ingredients = itemsFromJson(JSONUtils.getAsJsonArray(jsonFile, "ingredients"));
-            int mixingTime = JSONUtils.getAsInt(jsonFile, "mixingtime");
+        public MixingRecipe fromJson(ResourceLocation id, JsonObject jsonObject) {
+            String group = JSONUtils.getAsString(jsonObject, "group", "");
+            NonNullList<Ingredient> ingredients = itemsFromJson(JSONUtils.getAsJsonArray(jsonObject, "ingredients"));
+            int mixingTime = JSONUtils.getAsInt(jsonObject, "mixingtime");
 
             if (ingredients.isEmpty()) {
                 throw new JsonParseException("No ingredients for mixing recipe");
             } else if (ingredients.size() > 7) {
                 throw new JsonParseException("Too many items for mixing recipe - the max is 7");
             } else {
-                ItemStack result = ShapedRecipe.itemFromJson(JSONUtils.getAsJsonObject(jsonFile, "result"));
+                ItemStack result = ShapedRecipe.itemFromJson(JSONUtils.getAsJsonObject(jsonObject, "result"));
                 return new MixingRecipe(id, group, ingredients, result, mixingTime);
             }
         }
 
-        private static NonNullList<Ingredient> itemsFromJson(JsonArray p_199568_0_) {
+        private static NonNullList<Ingredient> itemsFromJson(JsonArray jsonArray) {
             NonNullList<Ingredient> ingredients = NonNullList.create();
 
-            for(int i = 0; i < p_199568_0_.size(); ++i) {
-                Ingredient ingredient = Ingredient.fromJson(p_199568_0_.get(i));
+            for(int i = 0; i < jsonArray.size(); ++i) {
+                Ingredient ingredient = Ingredient.fromJson(jsonArray.get(i));
                 if (!ingredient.isEmpty()) {
                     ingredients.add(ingredient);
                 }

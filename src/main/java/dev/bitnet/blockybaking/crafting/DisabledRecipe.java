@@ -34,19 +34,24 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 import javax.annotation.Nullable;
 
 public class DisabledRecipe implements IRecipe<IInventory> {
+    private final ResourceLocation id;
+
+    public DisabledRecipe(ResourceLocation id) {
+        this.id = id;
+    }
 
     @Override
-    public boolean matches(IInventory p_77569_1_, World p_77569_2_) {
+    public boolean matches(IInventory inventory, World world) {
         return false;
     }
 
     @Override
-    public ItemStack assemble(IInventory p_77572_1_) {
-        return null;
+    public ItemStack assemble(IInventory inventory) {
+        return ItemStack.EMPTY;
     }
 
     @Override
-    public boolean canCraftInDimensions(int p_194133_1_, int p_194133_2_) {
+    public boolean canCraftInDimensions(int width, int height) {
         return false;
     }
 
@@ -57,7 +62,7 @@ public class DisabledRecipe implements IRecipe<IInventory> {
 
     @Override
     public ResourceLocation getId() {
-        return null;
+        return this.id;
     }
 
     @Override
@@ -73,18 +78,18 @@ public class DisabledRecipe implements IRecipe<IInventory> {
     public static class Serializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<DisabledRecipe> {
 
         @Override
-        public DisabledRecipe fromJson(ResourceLocation p_199425_1_, JsonObject p_199425_2_) {
-            return new DisabledRecipe();
+        public DisabledRecipe fromJson(ResourceLocation id, JsonObject jsonObject) {
+            return new DisabledRecipe(id);
         }
 
         @Nullable
         @Override
-        public DisabledRecipe fromNetwork(ResourceLocation p_199426_1_, PacketBuffer p_199426_2_) {
-            return new DisabledRecipe();
+        public DisabledRecipe fromNetwork(ResourceLocation id, PacketBuffer packetBuffer) {
+            return new DisabledRecipe(id);
         }
 
         @Override
-        public void toNetwork(PacketBuffer p_199427_1_, DisabledRecipe p_199427_2_) {
+        public void toNetwork(PacketBuffer packetBuffer, DisabledRecipe recipe) {
 
         }
     }
