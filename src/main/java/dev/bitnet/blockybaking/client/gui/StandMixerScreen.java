@@ -46,6 +46,13 @@ public class StandMixerScreen extends ContainerScreen<StandMixerContainer> {
         int i = this.leftPos;
         int j = this.topPos;
         this.blit(p_230450_1_, i, j, 0, 0, this.imageWidth, this.imageHeight);
+
+        if (this.menu.isLit()) {
+            int litProgress = this.menu.getLitProgress();
+            this.blit(p_230450_1_, i + 16, j + 84 + 12 - litProgress, 176, 12 - litProgress, 14, litProgress - 1);
+        }
+
+        this.blit(p_230450_1_, i + 127, j + 30, 176, 14, this.menu.getMixProgress() + 1, 61);
     }
 
     @Override

@@ -28,6 +28,8 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.IntArray;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class StandMixerContainer extends Container {
     private final IInventory container;
@@ -66,5 +68,22 @@ public class StandMixerContainer extends Container {
     @Override
     public boolean stillValid(PlayerEntity player) {
         return this.container.stillValid(player);
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public boolean isLit() {
+        return this.data.get(0) > 0;
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public int getLitProgress() {
+        return this.data.get(0) / this.data.get(1) * 13;
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public int getMixProgress() {
+        int i = this.data.get(2);
+        int j = this.data.get(3);
+        return j != 0 && i != 0 ? i * 41 / j : 0;
     }
 }
